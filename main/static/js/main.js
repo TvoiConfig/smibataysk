@@ -89,3 +89,7 @@
 	setStickyPos();
 
 })(jQuery);
+
+function clicks(){
+    alert('Форма заполненна!')
+}

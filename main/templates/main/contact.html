@@ -101,26 +101,15 @@
 					<div class="col-md-5 col-md-offset-1">
 						<div class="section-row">
 							<h3>Форма обратной связи</h3>
-							<form>
+							<form method="post">
 								<div class="row">
-									<div class="col-md-7">
-										<div class="form-group">
-											<span>Email</span>
-											<input class="input" type="email" name="email">
-										</div>
-									</div>
-									<div class="col-md-7">
-										<div class="form-group">
-											<span>Subject</span>
-											<input class="input" type="text" name="subject">
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<textarea class="input" name="message" placeholder="Message"></textarea>
-										</div>
-										<button class="primary-button">Submit</button>
-									</div>
+									{% csrf_token %}
+									{{ form|crispy }}
+									{# {% for f in form %} #}
+									{# <p><label class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }} </p> #}
+									{# <div class="form-error">{{ f.errors }}</div> #}
+									{# {% endfor %} #}
+									<button class="primary-button" type="submit" id="submit" onclick="clicks();">Отправить</button>
 								</div>
 							</form>
 						</div>
