@@ -86,39 +86,28 @@
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
-				<div class="row">	
-					<!-- post -->
-					<div class="col-md-6">
-						<div class="post post-thumb">
-							<a class="post-img"><img src="{% static "img/post-1.jpg" %}" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2">О нас</a>
-									<span class="post-date">Октябрь 22, 2023</span>
-								</div>
-								<h3 class="post-title"><a>Мы открылись и готовы к информированию населения</a></h3>
+				<div class="row">
+					<div class="post">
+						{% for el in product %}
+							{% if el.type == "about" %}
+							<div class="col-md-6">
+								<a class="post-img"> <img src="{{ el.image.url }}" alt="image"></a>
+								<div class="post-body">
+									<div class="post-meta">
+										<a class="post-category cat-2">{{ el.type }}</a>
+										<span class="post-date">{{ el.name }}</span>
+									</div>
+									<h3 class="post-title"><a>{{ el.character }}</a></h3>
+								  </div>
 							</div>
-						</div>
+							{% endif %}
+						  {% endfor %}
 					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-6">
-						<div class="post post-thumb">
-							<a class="post-img"><img src="{% static "img/post-2.jpg" %}" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2">О нас</a>
-									<span class="post-date">Октябрь 22, 2023</span>
-								</div>
-								<h3 class="post-title"><a>Открыт набор в команду нашего СМИ</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
 				</div>
-				<!-- /row -->
-
+			</div>
+		</div>
+		<div class="section">
+			<div class="container">
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
@@ -135,7 +124,7 @@
 									<a class="post-img"> <img src="{{ el.image.url }}" alt="image"></a>
 									<div class="post-body">
 										<div class="post-meta">
-											<a class="post-category cat-1">{{ el.type }}</p>
+											<a class="post-category cat-1">{{ el.type }}</a>
 											<span class="post-date">{{ el.name }}</span>
 										</div>
 										<h3 class="post-title"><a>{{ el.character }}</a></h3>
@@ -147,7 +136,8 @@
 					</div>
 					<!-- конец подрузки новостей из бд-->
 				</div>
-		
+			</div>
+		</div>
 		<!-- section -->
 		<div class="section section-grey">
 			<!-- container -->
@@ -167,7 +157,7 @@
 									<a class="post-img"> <img src="{{ el.image.url }}" alt="image"></a>
 									<div class="post-body">
 										<div class="post-meta">
-											<a class="post-category cat-1">{{ el.type }}</p>
+											<a class="post-category cat-3">{{ el.type }}</a>
 											<span class="post-date">{{ el.name }}</span>
 										</div>
 										<h3 class="post-title"><a>{{ el.character }}</a></h3>
@@ -207,7 +197,7 @@
 											<a class="post-img"> <img src="{{ el.image.url }}" alt="image"></a>
 											<div class="post-body">
 												<div class="post-meta">
-													<a class="post-category cat-1">{{ el.type }}</p>
+													<a class="post-category cat-4">{{ el.type }}</a>
 													<span class="post-date">{{ el.name }}</span>
 												</div>
 												<h3 class="post-title"><a>{{ el.character }}</a></h3>
