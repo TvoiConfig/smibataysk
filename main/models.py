@@ -3,12 +3,14 @@ from django.db import models
 class Products(models.Model):
 
     CHOICE_TYPE = (
-        ('News', 'Новость'),
-        ('Another', 'Другое'),
+        ('about', 'О нас'),
+        ('sponsor', 'Реклама'),
+        ('news', 'Новость'),
+        ('popular', 'Популярное'),
     )
 
     name = models.CharField(max_length=50, verbose_name="Имя")
-    type = models.CharField(max_length=50, choices=CHOICE_TYPE, default='News', verbose_name="Тип")
+    type = models.CharField(max_length=50, choices=CHOICE_TYPE, default='news', verbose_name="Тип")
     character = models.TextField(max_length=100, verbose_name="Описание")
     image = models.ImageField(null=True, blank=True, upload_to="image/")
 

@@ -126,113 +126,27 @@
 							<h2>Новости</h2>
 						</div>
 					</div>
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">1</a>
-									<span class="post-date">2</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-					<div class="col-md-4">
+					<!-- Подрузга новостей из бд -->
+					<div class="row">
 						<div class="post">
 							{% for el in product %}
-							<img src="{{ el.image.url }}" class="post-img" alt="image">
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1">{{ el.type }}</p>
-									<span class="post-date">{{ el.name }}</span>
+								{% if el.type == "news" %}
+								<div class="col-md-4">
+									<a class="post-img"> <img src="{{ el.image.url }}" alt="image"></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-1">{{ el.type }}</p>
+											<span class="post-date">{{ el.name }}</span>
+										</div>
+										<h3 class="post-title"><a>{{ el.character }}</a></h3>
+						  			</div>
 								</div>
-								<h3 class="post-title"><a>{{ el.character }}</a></h3>
-						  	</div>
-						  {% endfor %}
+								{% endif %}
+						  	{% endfor %}
 						</div>
 					</div>
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">1</a>
-									<span class="post-date">2</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">1</a>
-									<span class="post-date">2</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<div class="clearfix visible-md visible-lg"></div>
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-6.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">1</a>
-									<span class="post-date">2</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-4" href="category.html">1</a>
-									<span class="post-date">2</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">1</a>
-									<span class="post-date">2</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
+					<!-- конец подрузки новостей из бд-->
 				</div>
-				<!-- /row -->
 		
 		<!-- section -->
 		<div class="section section-grey">
@@ -241,52 +155,26 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<div class="section-title text-center">
+						<div class="section-title">
 							<h2>Спонсорские посты</h2>
 						</div>
 					</div>
-
-					<!-- post -->
-					<div class="col-md-4">
+					<div class="row">
 						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">1</a>
-									<span class="post-date">2</span>
+							{% for el in product %}
+								{% if el.type == "sponsor" %}
+								<div class="col-md-4">
+									<a class="post-img"> <img src="{{ el.image.url }}" alt="image"></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-1">{{ el.type }}</p>
+											<span class="post-date">{{ el.name }}</span>
+										</div>
+										<h3 class="post-title"><a>{{ el.character }}</a></h3>
+						  			</div>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">1</a>
-									<span class="post-date">2</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">1</a>
-									<span class="post-date">2</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-							</div>
+								{% endif %}
+						  	{% endfor %}
 						</div>
 					</div>
 					<!-- /post -->
@@ -307,99 +195,30 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="section-title">
-									<h2>Популярные посты</h2>
+									<h2>Популярные новости</h2>
 								</div>
 							</div>
 							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">1</a>
-											<span class="post-date">2</span>
+							<div class="row">
+								<div class="post">
+									{% for el in product %}
+										{% if el.type == "popular" %}
+										<div class="col-md-8">
+											<a class="post-img"> <img src="{{ el.image.url }}" alt="image"></a>
+											<div class="post-body">
+												<div class="post-meta">
+													<a class="post-category cat-1">{{ el.type }}</p>
+													<span class="post-date">{{ el.name }}</span>
+												</div>
+												<h3 class="post-title"><a>{{ el.character }}</a></h3>
+											  </div>
 										</div>
-										<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-6.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">1</a>
-											<span class="post-date">2</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-4" href="category.html">1</a>
-											<span class="post-date">2</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-							
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-3" href="category.html">1</a>
-											<span class="post-date">2</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">3</a></h3>
-									</div>
+										{% endif %}
+									  {% endfor %}
 								</div>
 							</div>
 							<!-- /post -->
 						</div>
-					</div>
-
-					<div class="col-md-4">
-						
-						<!-- catagories -->
-						<div class="aside-widget">
-							<div class="section-title">
-								<h2>Инфо о Батайске</h2>
-							</div>
-							<div class="category-widget">
-								<ul>
-									<li><a class="cat-1">Население<span>126700</span></a></li>
-									<li><a class="cat-2">Дата основания<span>26.10.1938</span></a></li>
-									<li><a class="cat-4">Средняя ЗП<span>64459₽</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- /catagories -->
-						
-						<!-- tags -->
-						<div class="aside-widget">
-							<div class="tags-widget">
-								<ul>
-									<li><a href="https://www.xn----7sbabb9bafefpyi3bm2b9a2gra.xn--p1ai/">Мэрия</a></li>
-									<li><a href="http://cgbbataysk.ru/">Поликлиника</a></li>
-									<li><a href="https://www.gismeteo.ru/weather-bataysk-11393/">Погода</a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- /tags -->
 					</div>
 				</div>
 				<!-- /row -->
