@@ -1,0 +1,175 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Новости Батайска</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> 
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="{% static "css/bootstrap.min.css" %}"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="{% static "css/style.css" %}"/>
+
+    </head>
+	<body>
+		
+		<!-- Header -->
+		<header id="header">
+			<!-- Nav -->
+			<div id="nav">
+				<!-- Main Nav -->
+				<div id="nav-fixed">
+					<div class="container">
+						<!-- nav -->
+						<ul class="nav-menu nav navbar-nav">
+							<li class="cat-1"><a href="{% url "index" %}">Главная</a></li>
+							<li class="cat-2"><a href="{% url "about" %}">О нас</a></li>
+							<li class="cat-3"><a href="{% url "contact" %}">Контакты</a></li>
+						</ul>
+						<!-- /nav -->
+
+						<!-- search & aside toggle -->
+						<div class="nav-btns">
+							<button class="aside-btn"><i class="fa fa-bars"></i></button>
+						</div>
+						<!-- /search & aside toggle -->
+					</div>
+				</div>
+				<!-- /Main Nav -->
+
+				<!-- Aside Nav -->
+				<div id="nav-aside">
+					<!-- nav -->
+					<div class="section-row">
+						<ul class="nav-aside-menu">
+							<li><a href="{% url "index" %}">Главная</a></li>
+							<li><a href="{% url "about" %}">О нас</a></li>
+							<li><a href="{% url "contact" %}">Контакты</a></li>
+						</ul>
+					</div>
+					<!-- /nav -->
+
+					<!-- social links -->
+					<div class="section-row">
+						<h3>Наши соц-сети</h3>
+						<ul class="nav-aside-social">
+							<li><a href="https://vk.com/id698083555"><i class="fa fa-vk"></i></a></li>
+						</ul>
+					</div>
+					<!-- /social links -->
+
+					<!-- aside nav close -->
+					<button class="nav-aside-close"><i class="fa fa-times"></i></button>
+					<!-- /aside nav close -->
+				</div>
+				<!-- Aside Nav -->
+			</div>
+			<!-- /Nav -->
+		</header>
+		<!-- /Header -->
+		
+		<!-- section -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-row">
+							<p>Создание "Новостей Батайска" началось с идеи о удобном, локальном СМИ, чтобы поделиться важными событиями, происходящими в городе Батайск.</p>
+							<figure class="figure-img">
+								<img class="img-responsive" src="{% static "img/about-1.jpg" %}" alt="">
+							</figure>
+							<p>На данный момент "Новости Батайска" увеличивают свой охват читателей и мы ищем кадры для обслуживания нового сайта и поиска новостей.</p>
+						</div>
+						<div class="row section-row">
+							<div class="col-md-6">
+								<figure class="figure-img">
+									<img class="img-responsive" src="{% static "img/about-2.jpg" %}" alt="">
+								</figure>
+							</div>
+							<div class="col-md-6">
+								<h3>Наша миссия</h3>
+								<ul class="list-style">
+									<li><p>Повышение осведомленности населения о свежих событиях.</p></li>
+									<li><p>Увеличение качества и достоверности новостей Батайска в интернете.</p></li>
+									<li><p>Продвижение полезных ресурсов для Батайчан.</p></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /section -->
+
+		<!-- Footer -->
+		<footer id="footer">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-5">
+						<div class="footer-widget">
+							<ul class="footer-nav">
+								<li><a href="https://vk.com/id698083555">Сотрудничество</a></li>
+							</ul>
+							<div class="footer-copyright">
+								<span>Все права защищены &copy;<script>document.write(new Date().getFullYear());</script> Новости Батайска<i aria-hidden="true"></i></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="footer-widget">
+									<h3 class="footer-title">навигация</h3>
+									<ul class="footer-links">
+										<li><a href="{% url "about" %}">О нас</a></li>
+										<li><a href="{% url "contact" %}">Контакты</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="footer-widget">
+							<ul class="footer-social">
+								<li><a href="https://vk.com/im?peers=371860075_11835980_c35&sel=698083555"><i class="fa fa-vk"></i></a></li>
+								<li><a href="https://vk.com/im?peers=371860075_11835980_c35&sel=698083555"><i class="fa fa-vk"></i></a></li>
+								<li><a href="https://vk.com/im?peers=371860075_11835980_c35&sel=698083555"><i class="fa fa-vk"></i></a></li>
+								<li><a href="https://vk.com/im?peers=371860075_11835980_c35&sel=698083555"><i class="fa fa-vk"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</footer>
+		<!-- /Footer -->
+
+		<!-- jQuery Plugins -->
+		<script src="{% static "js/jquery.min.js" %}"></script>
+		<script src="{% static "js/bootstrap.min.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+
+	</body>
+</html>
