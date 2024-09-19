@@ -1,4 +1,5 @@
 from django.db import models
+import os
 
 class Products(models.Model):
 
@@ -7,6 +8,7 @@ class Products(models.Model):
         ('sponsor', 'Реклама'),
         ('news', 'Новость'),
         ('popular', 'Популярное'),
+        ('archive', 'Архивировано')
     )
 
     name = models.CharField(max_length=50, verbose_name="Имя")
@@ -23,6 +25,12 @@ class Products(models.Model):
     def __str__(self):
         return self.name
     
+    def delete(self, *args, **kwargs):
+        if self.image:
+            if os.path.isfile(self.image.path):
+                os.remove(self.image.path)
+        super().delete(*args, **kwargs)
+    
 class record(models.Model):
     name = models.CharField(max_length=150, verbose_name='ФИО')
     number = models.CharField(max_length=150, verbose_name='Номер телефона')
@@ -36,3 +44,22 @@ class record(models.Model):
         
     def __str__(self):
         return self.message
+    
+class Stream(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Название трансляции')
+    character = models.TextField(max_length=100, verbose_name='Описание трансляции')
+    video = models.FileField(blank=False, verbose_name='Трансляция', upload_to="video/")
+    
+    class Meta: 
+        db_table = 'stream'
+        verbose_name = 'Трансляция'
+        verbose_name_plural = 'Трансляции'
+        
+    def __str__(self):
+        return self.name
+    
+    def delete(self, *args, **kwargs):
+        if self.video:
+            if os.path.isfile(self.video.path):
+                os.remove(self.video.path)
+        super().delete(*args, **kwargs)

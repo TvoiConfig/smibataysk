@@ -4,7 +4,12 @@ from .forms import RecordForm
 
 def index(request):
     product = Products.objects.all()
-    return render(request, 'main/index.html', {'product': product})
+    streamrecord = Stream.objects.all()
+    context = {
+        'product': product,
+        'streamrecord': streamrecord,
+    }
+    return render(request, 'main/index.html', context)
 
 def about(request):
     return render(request, 'main/about.html')
@@ -18,3 +23,5 @@ def contact(request):
         form = RecordForm()
         
     return render(request, 'main/contact.html', {'form': form})
+
+
