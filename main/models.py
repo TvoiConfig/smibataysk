@@ -1,4 +1,5 @@
 from django.db import models
+import os
 
 class Products(models.Model):
 
@@ -23,6 +24,12 @@ class Products(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def delete(self, *args, **kwargs):
+        if self.image:
+            if os.path.isfile(self.image.path):
+                os.remove(self.image.path)
+        super().delete(*args, **kwargs)
     
 class record(models.Model):
     name = models.CharField(max_length=150, verbose_name='ФИО')
@@ -50,3 +57,9 @@ class Stream(models.Model):
         
     def __str__(self):
         return self.name
+    
+    def delete(self, *args, **kwargs):
+        if self.video:
+            if os.path.isfile(self.video.path):
+                os.remove(self.video.path)
+        super().delete(*args, **kwargs)
