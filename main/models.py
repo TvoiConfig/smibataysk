@@ -37,3 +37,16 @@ class record(models.Model):
         
     def __str__(self):
         return self.message
+    
+class Stream(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Название трансляции')
+    character = models.TextField(max_length=100, verbose_name='Описание трансляции')
+    video = models.FileField(blank=False, verbose_name='Трансляция', upload_to="video/")
+    
+    class Meta: 
+        db_table = 'stream'
+        verbose_name = 'Трансляция'
+        verbose_name_plural = 'Трансляции'
+        
+    def __str__(self):
+        return self.name
