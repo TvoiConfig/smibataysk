@@ -7,6 +7,7 @@ class Products(models.Model):
         ('sponsor', 'Реклама'),
         ('news', 'Новость'),
         ('popular', 'Популярное'),
+        ('archive', 'Архивировано')
     )
 
     name = models.CharField(max_length=50, verbose_name="Имя")
