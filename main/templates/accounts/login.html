@@ -1,7 +1,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -87,20 +87,9 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-					<div class="col-md-6">
-						<div class="section-row">
-							<h3>Контакты</h3>
-							<p>Связаться с нами можно по ниже указанным данным</p>
-							<ul class="list-style">
-								<li><p><strong>Почта:</strong> <a href="#">Newsbtsk@mail.ru</a></p></li>
-								<li><p><strong>Телефон:</strong> 213-520-7376</p></li>
-								<li><p><strong>Адрес:</strong> ул. Куйбышева, 50/150, Батайск</p></li>
-							</ul>
-						</div>
-					</div>
 					<div class="col-md-5 col-md-offset-1">
 						<div class="section-row">
-							<h3>Форма обратной связи</h3>
+							<h3>Авторизация</h3>
 							<form method="post">
 								<div class="row">
 									{% csrf_token %}
@@ -109,7 +98,7 @@
 									{# <p>    <label class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}      </p> #}
 									{# <div class="form-error">{{ f.errors }}</div> #}
 									{# {% endfor %} #}
-									<button class="primary-button" type="submit" id="submit" onclick="clicks();">Отправить</button>
+									<button class="primary-button" type="submit" id="submit">Войти</button>
 								</div>
 							</form>
 						</div>
