@@ -694,6 +694,22 @@ RESPONSIVE
      color: #007bb5;
      border-color: #007bb5;
 }
+
+ .post-like {
+    width: 2vh;
+    height: 2vh;
+ }
+
+ .likes-form {
+    display: inline;
+ }
+
+ .post-like-btn {
+    background-color: #eceef2;
+    border: none;
+    border-radius: 2px;
+    padding: 2px;
+ }
 /*----------------------------*\
 	author
 \*----------------------------*/

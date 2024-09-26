@@ -1,3 +1,4 @@
+
 (function($) {
 	"use strict"
 
@@ -100,3 +101,28 @@ function clicks(){
 
 
 
+$(document).ready(function() {
+    $('.post-like').on('click', function() {
+        var productId = $(this).data('product-id');
+        var likeUrl = $(this).data('like-url'); // Get the like URL
+        
+        $.ajax({
+            url: likeUrl.replace('0', productId), // Use the URL directly
+            type: "POST",
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}', 
+            },
+            success: function(data) {
+                if (data.success) {
+                    var likeCount = $('.post-date:contains("' + data.likes + '")');
+                    likeCount.text(data.likes);
+                } else {
+                    alert(data.message); 
+                }
+            },
+            error: function(xhr) {
+                alert('Произошла ошибка. Попробуйте еще раз.');
+            }
+        });
+    });
+});
