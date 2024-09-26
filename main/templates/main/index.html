@@ -48,7 +48,7 @@
 							<a href="{% url 'logout' %}">Выйти</a>
 							{% else %}
 							<a href="{% url "login" %}">Войти</a>
-							<a href="">Регистрация</a>
+							<a href="{% url "reg" %}">Регистрация</a>
 							{% endif %}
 							<button class="aside-btn"><i class="fa fa-bars"></i></button>
 						</div>

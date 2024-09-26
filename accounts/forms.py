@@ -8,6 +8,7 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
 
 class CustomAuthenticationForm(AuthenticationForm):
+    success_url = 'home'
     class Meta:
         model = User
         fields = ('username', 'password')
